@@ -12,55 +12,108 @@
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
-  .wrapper{
-    
-    .answers{
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
-      .answerButton{
-        font-family: "Gloria Hallelujah", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 20px;
-        margin: 5px;
-        padding: 5px 10px;
-        border: none;
-        cursor: pointer;
-        border-radius: 6px;
-        transition: background-color 0.3s ease-in-out;
-        width: 480px;
-        height: 81.50px;
-        &:hover{
-          background-color: #ccc;
-          border-color: #000;
+
+  @media only screen and (min-width: 320px) and (max-width: 450px) {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    margin-top: 20px;
+  }
+
+  .content {
+    .wrapper {
+      @media only screen and (min-width: 320px) and (max-width: 450px) {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .answers {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        @media only screen and (min-width: 320px) and (max-width: 450px) {
+          font-size: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          width: 100%;
         }
 
-        &.selected {
-          background-color: #e0f7fa; // cor destacada quando a resposta for selecionada
-          border-color: #00796b; // cor da borda para a resposta selecionada
-          color: #00796b; // cor do texto na resposta selecionada
-        }
-      
-        &:disabled {
-          cursor: not-allowed;
-          opacity: 0.6;
+        .answerButton {
+          font-family: "Gloria Hallelujah", cursive;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 20px;
+          margin: 5px;
+          padding: 5px 10px;
+          border: none;
+          cursor: pointer;
+          border-radius: 6px;
+          transition: background-color 0.3s ease-in-out;
+          width: 480px;
+          height: 81.50px;
+          @media only screen and (min-width: 320px) and (max-width: 450px) {
+            width: 100%;
+          }
+          &:hover {
+            background-color: #ccc;
+            border-color: #000;
+          }
+
+          &.selected {
+            background-color: #e0f7fa;
+            border-color: #00796b;
+            color: #00796b;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+          }
         }
       }
     }
-  }
-  .nextButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-  
-    &:hover {
-      background-color: #45a049;
+
+    .nextButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+    .buttonInit {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      transition: all 0.2s ease-in-out;
+      font-family: "Gloria Hallelujah", cursive;
+      font-weight: 400;
+      font-style: normal;
+    
+      &:hover {
+        background-color: #54c259;
+      }
     }
   }
 }
-

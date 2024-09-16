@@ -4,6 +4,7 @@ import { useState } from 'react'
 import styles from './styles.module.scss'
 import logo from '@/assets/logo.png'
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 export default function Quizz() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -42,7 +43,7 @@ export default function Quizz() {
       //     color: 'white',
       //   }
       // });
-    } 
+    }
     // else {
     //   setFeedback('Incorreto! Tente novamente.');
     //   toast.error("Incorreto! Tente novamente.", {
@@ -76,9 +77,9 @@ export default function Quizz() {
       <div className={styles.logo}>
         <img src={logo.src} alt="Logo" />
       </div>
-      <div className={styles.wrapper}>
-        
-        
+      <div className={styles.content}>
+
+
 
         {currentQuestion < questions.length ? (
           <div className={styles.wrapper}>
@@ -91,7 +92,7 @@ export default function Quizz() {
                   key={option}
                   className={`${styles.answerButton} ${selectedAnswer === option ? styles.selected : ''}`}
                   onClick={() => handleAnswerSelect(option)}
-                  // disabled={feedback === 'Correto!' && selectedAnswer !== null} // Desabilita apenas se a resposta for correta                
+                // disabled={feedback === 'Correto!' && selectedAnswer !== null} // Desabilita apenas se a resposta for correta                
                 >
                   {option}
                 </button>
@@ -106,6 +107,9 @@ export default function Quizz() {
         ) : (
           <div className={styles.result}>
             <h2>Quiz concluído! Pontuação: {score}/{questions.length}</h2>
+            <Link href="/" className={styles.buttonInit}>
+              Reiniciar
+            </Link>
           </div>
         )}
       </div>
