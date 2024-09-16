@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className={styles.homepage}>
-      <div className="box">
+      <div className={styles.logo}>
         <img src={logo.src} alt="Logo" />
       </div>
       <Link href="/game" className={styles.buttonInit}>

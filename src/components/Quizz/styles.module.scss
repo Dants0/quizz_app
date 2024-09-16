@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+
+
+.containerQuizz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  .wrapper{
+    
+    .answers{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      .answerButton{
+        font-family: "Gloria Hallelujah", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        margin: 5px;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background-color 0.3s ease-in-out;
+        width: 480px;
+        height: 81.50px;
+        &:hover{
+          background-color: #ccc;
+          border-color: #000;
+        }
+
+        &.selected {
+          background-color: #e0f7fa; // cor destacada quando a resposta for selecionada
+          border-color: #00796b; // cor da borda para a resposta selecionada
+          color: #00796b; // cor do texto na resposta selecionada
+        }
+      
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .nextButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+}
+
